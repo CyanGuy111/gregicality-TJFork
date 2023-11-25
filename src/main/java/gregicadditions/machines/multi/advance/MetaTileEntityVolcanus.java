@@ -196,9 +196,8 @@ public class MetaTileEntityVolcanus extends MetaTileEntityElectricBlastFurnace {
 
             Map<String, Integer> countFluid = new HashMap<>();
             if (matchingRecipe.getFluidInputs().size() != 0) {
-
                 this.findFluid(countFluid, fluidInputs);
-                minMultiplier = Math.min(maxItemsLimit, this.getMinRatioItem(countIngredients, matchingRecipe, maxItemsLimit));
+                minMultiplier = Math.min(minMultiplier, this.getMinRatioFluid(countFluid, matchingRecipe, maxItemsLimit));
             }
 
             if (minMultiplier == Integer.MAX_VALUE) {
